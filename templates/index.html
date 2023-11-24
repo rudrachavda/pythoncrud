@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD API Form</title>
+</head>
+<body>
+    <h1>CRUD API Form</h1>
+
+    <form method="post">
+        <label for="method">HTTP Method:</label>
+        <input type="text" name="method" id="method" placeholder="GET, POST, PUT, DELETE" required>
+
+        <label for="book_id">Book ID (for PUT and DELETE):</label>
+        <input type="number" name="book_id" id="book_id">
+
+        <label for="title">Book Title (for POST and PUT):</label>
+        <input type="text" name="title" id="title">
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <h2>Current Books:</h2>
+    <ul>
+        {% for book in books %}
+            <li>{{ book.id }} - {{ book.title }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
